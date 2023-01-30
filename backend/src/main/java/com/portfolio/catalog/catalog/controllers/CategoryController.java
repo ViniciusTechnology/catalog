@@ -1,5 +1,6 @@
 package com.portfolio.catalog.catalog.controllers;
 
+import com.portfolio.catalog.catalog.dto.CategoryDto;
 import com.portfolio.catalog.catalog.entities.Category;
 import com.portfolio.catalog.catalog.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
     @GetMapping
-    public ResponseEntity<List<Category>> findAll(){
-        List<Category> list = service.findAll();
+    public ResponseEntity<List<CategoryDto>> findAll(){
+        List<CategoryDto> list = service.findAll();
         return ResponseEntity.ok().body(list);
 
 
